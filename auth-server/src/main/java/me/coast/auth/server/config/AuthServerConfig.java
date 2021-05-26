@@ -34,12 +34,12 @@ public class AuthServerConfig extends AuthorizationServerConfigurerAdapter {
         this.keyStoreAlias = keyStoreAlias;
     }
 
-    @Bean
+
     public PasswordEncoder passwordEncoder() {
         return PasswordEncoderFactories.createDelegatingPasswordEncoder();
     }
 
-    @Bean
+
     public JwtAccessTokenConverter accessTokenConverter() {
         JwtAccessTokenConverter converter = new JwtAccessTokenConverter();
         KeyStoreKeyFactory keyStoreKeyFactory =
@@ -48,7 +48,7 @@ public class AuthServerConfig extends AuthorizationServerConfigurerAdapter {
         return converter;
     }
 
-    @Bean
+
     public TokenStore tokenStore() {
         return new JwtTokenStore(accessTokenConverter());
     }
