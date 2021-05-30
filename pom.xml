@@ -8,7 +8,8 @@
 		<module>auth-server</module>
 		<module>resource-server</module>
 		<module>security-service</module>
-	</modules>
+        <module>auth-client</module>
+    </modules>
 	<parent>
 		<groupId>org.springframework.boot</groupId>
 		<artifactId>spring-boot-starter-parent</artifactId>

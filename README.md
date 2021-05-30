@@ -34,3 +34,5 @@ http://client1:server1@localhost:8082/oauth/token  POST方式,参数(grant_type=
 
 3、WebSecurityConfigurerAdapter与ResourceServerConfigurerAdapter：https://www.jianshu.com/p/fe1194ca8ecd
 
+4、Spring Security OAuth2 Demo：https://www.cnblogs.com/pangguoming/p/7885162.html
+
