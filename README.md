@@ -36,3 +36,14 @@ http://client1:server1@localhost:8082/oauth/token  POST方式,参数(grant_type=
 
 4、Spring Security OAuth2 Demo：https://www.cnblogs.com/pangguoming/p/7885162.html
 
+5、Spring Boot OAuth 2.0 客户端：https://www.cnblogs.com/cjsblog/p/9241217.html
+
+6、Spring Cloud(6.3)：搭建OAuth2 Resource Server：https://www.cnblogs.com/storml/p/11246113.html
+
+7、http://www.360doc.com/content/18/0112/18/41344223_721399934.shtml：auth2 resource资源集成
+
+8、SpringCloud——安全认证（Security）：https://www.pianshen.com/article/115710337/
+
+9、Spring Security 与 OAuth2（介绍）：https://www.jianshu.com/p/68f22f9a00ee
+
+
