@@ -46,4 +46,7 @@ http://client1:server1@localhost:8082/oauth/token  POST方式,参数(grant_type=
 
 9、Spring Security 与 OAuth2（介绍）：https://www.jianshu.com/p/68f22f9a00ee
 
+10、SpringCloud微服务间安全调用实现（SpringSecurity+Oauth2+Jwt）：https://blog.csdn.net/q438944209/article/details/82920461
+
+11、Spring Cloud OAuth2 token存数据库实现：https://www.jianshu.com/p/4ce5577bab74
 
