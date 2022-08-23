@@ -12,4 +12,10 @@ public class DemoController {
         System.out.println("code="+code);
         return "auth2.0";
     }
+
+    @GetMapping("/dummy")
+    public String dummy(@RequestParam(required = false) String code){
+        System.out.println("code="+code);
+        return "auth2.0";
+    }
 }

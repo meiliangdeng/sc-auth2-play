@@ -7,6 +7,7 @@
 * /oauth/error：授权服务错误信息端点
 * /oauth/check_token：用于资源服务访问的令牌解析端点
 * /oauth/token_key：提供公有密匙的端点，如果使用JWT令牌的话
+
 ```
 ## flat(in-memory) 方式
 参考: https://blog.csdn.net/liuying1802028915/article/details/105112256
@@ -16,11 +17,13 @@ http://client1:server1@localhost:8082/oauth/token  POST方式,参数(grant_type=
 返回值:
 ```
 {
-  "access_token": "a8fa44e5-fef6-42bb-b2f4-044511dd4240",
-  "token_type": "bearer",
-  "refresh_token": "d3b13f53-c76c-4513-af28-60aa069cfd17",
-  "expires_in": 43199,
-  "scope": "all"
+    "access_token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX25hbWUiOiJhZG1pbiIsInNjb3BlIjpbImFsbCJdLCJvcmdhbml6YXRpb24iOiJhZG1pbiIsImV4cCI6MTY2MTI3NTAwNywiYXV0aG9yaXRpZXMiOlsiUk9MRV9BRE1JTiJdLCJqdGkiOiI1NDcwNzJkYS05MjI5LTRjNWUtYTY4Ni1iNzE5ZTkwZjczZGIiLCJjbGllbnRfaWQiOiJjbGllbnQxIn0.ZWGHKNPnvvM12EVzuJsEaYmEPJbi3cb-IPzyf9DIAig",
+    "token_type": "bearer",
+    "refresh_token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX25hbWUiOiJhZG1pbiIsInNjb3BlIjpbImFsbCJdLCJvcmdhbml6YXRpb24iOiJhZG1pbiIsImF0aSI6IjU0NzA3MmRhLTkyMjktNGM1ZS1hNjg2LWI3MTllOTBmNzNkYiIsImV4cCI6MTY2MzgyMzgwNywiYXV0aG9yaXRpZXMiOlsiUk9MRV9BRE1JTiJdLCJqdGkiOiI1NzU1MjZlNS1kYzU1LTQwNTQtYmM0OS0xNjI2MjFjNDIwYTEiLCJjbGllbnRfaWQiOiJjbGllbnQxIn0.EtxxsLPZ9Cs8tVSTGpaYsMFmJ8KR9pw5qCqPMFlxtIU",
+    "expires_in": 43199,
+    "scope": "all",
+    "organization": "admin",
+    "jti": "547072da-9229-4c5e-a686-b719e90f73db"
 }
  ```
   

@@ -18,8 +18,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
     
     @Override
     protected void configure(HttpSecurity http) throws Exception {
-        http.httpBasic();
-        super.configure(http);
+        http.authorizeHttpRequests().anyRequest().permitAll();
     }
     @Override
     protected void configure(AuthenticationManagerBuilder auth) throws Exception {
