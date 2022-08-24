@@ -10,7 +10,6 @@ import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.security.oauth2.provider.ClientDetails;
 import org.springframework.security.oauth2.provider.ClientRegistrationException;
 import org.springframework.stereotype.Service;
-import org.springframework.web.server.ResponseStatusException;
 
 import javax.annotation.PostConstruct;
 import java.util.ArrayList;
@@ -26,7 +25,7 @@ public class ClientServiceImpl implements ClientService {
         this.passwordEncoder = passwordEncoder;
     }
 
-    @PostConstruct
+    //@PostConstruct
     public void initData() {
         String clientSecret = passwordEncoder.encode("123456");
         clientList = new ArrayList<>();
@@ -61,7 +60,7 @@ public class ClientServiceImpl implements ClientService {
     public ClientDetails loadClientByClientId(String clientId) throws ClientRegistrationException {
         List<Client> findClientList = clientList.stream().filter(item -> item.getClientId().equals(clientId)).collect(Collectors.toList());
         if (CollUtil.isEmpty(findClientList)) {
-            throw new ResponseStatusException(HttpStatus.NOT_FOUND, MessageConstant.NOT_FOUND_CLIENT);
+            //throw new ResponseStatusException(HttpStatus.NOT_FOUND, MessageConstant.NOT_FOUND_CLIENT);
         }
         return new ClientPrincipal(findClientList.get(0));
     }
