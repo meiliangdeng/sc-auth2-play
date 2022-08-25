@@ -21,8 +21,6 @@ public class TyAuthServerConfig extends AuthorizationServerConfigurerAdapter {
     
     private TokenStore tokenStore = new InMemoryTokenStore();
 	
-	@Autowired
-	private PasswordEncoder passwordEncoder;
 	
 	@Autowired
 	private AuthenticationManager authenticationManager;
@@ -32,23 +30,24 @@ public class TyAuthServerConfig extends AuthorizationServerConfigurerAdapter {
     public void configure(ClientDetailsServiceConfigurer clients) throws Exception{
         clients.inMemory()
         .withClient("client1")
+        //.secret(passwordEncoder.encode("server1"))
         .secret("server1")
-        .authorizedGrantTypes("refresh_token", "password", "authorization_code")
-        .scopes("server")
-        .accessTokenValiditySeconds(3000)
-        .autoApprove(true);
+        //.authorizedGrantTypes("refresh_token", "password", "authorization_code")
+        .authorizedGrantTypes("password")
+        .scopes("server");
     }
 
     @Override
 	public void configure(AuthorizationServerEndpointsConfigurer endpoints) throws Exception {
 		
 		endpoints.allowedTokenEndpointRequestMethods(HttpMethod.GET, HttpMethod.POST);
-		
+		//endpoints.userDetailsService(userDetailsService);
 		// 配置Token的存储方式
 		endpoints.tokenStore(tokenStore)
 			// 注入WebSecurityConfig配置的bean
 			.authenticationManager(authenticationManager);
 	}
+
 
     @Override
     public void configure(AuthorizationServerSecurityConfigurer security) throws Exception {
