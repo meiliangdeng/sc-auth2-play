@@ -52,4 +52,6 @@ http://client1:server1@localhost:8082/oauth/token  POST方式,参数(grant_type=
 10、SpringCloud微服务间安全调用实现（SpringSecurity+Oauth2+Jwt）：https://blog.csdn.net/q438944209/article/details/82920461
 
 11、Spring Cloud OAuth2 token存数据库实现：https://www.jianshu.com/p/4ce5577bab74
+12、OAuth2.0协议专区-Springcloud集成springsecurity oauth2实现服务统一认证,应该时最简单的教程了~ ：https://www.cnblogs.com/liboware/p/12528420.html
+13、spring-cloud-starter-oauth2搭建授权中心服务：https://www.cnblogs.com/xuetieqi/p/13869947.html
 

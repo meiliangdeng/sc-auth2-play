@@ -1,10 +1,12 @@
 package me.coast.auth.server.config.flat;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.core.annotation.Order;
 import org.springframework.http.HttpMethod;
 import org.springframework.security.authentication.AuthenticationManager;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.security.oauth2.config.annotation.configurers.ClientDetailsServiceConfigurer;
 import org.springframework.security.oauth2.config.annotation.web.configuration.AuthorizationServerConfigurerAdapter;
@@ -14,6 +16,8 @@ import org.springframework.security.oauth2.config.annotation.web.configurers.Aut
 import org.springframework.security.oauth2.provider.token.TokenStore;
 import org.springframework.security.oauth2.provider.token.store.InMemoryTokenStore;
 
+import me.coast.auth.server.service.impl.UserDetailsServiceImpl;
+
 @Configuration
 @EnableAuthorizationServer
 @Order(Integer.MIN_VALUE)
@@ -22,6 +26,9 @@ public class TyAuthServerConfig extends AuthorizationServerConfigurerAdapter {
     private TokenStore tokenStore = new InMemoryTokenStore();
 	
 	
+    @Autowired
+    UserDetailsServiceImpl userDetailsServiceImpl;
+    
 	@Autowired
 	private AuthenticationManager authenticationManager;
     
@@ -37,6 +44,11 @@ public class TyAuthServerConfig extends AuthorizationServerConfigurerAdapter {
         .scopes("server");
     }
 
+    @Bean
+    public PasswordEncoder passwordEncoder() {
+        return new BCryptPasswordEncoder();
+    }
+    
     @Override
 	public void configure(AuthorizationServerEndpointsConfigurer endpoints) throws Exception {
 		
@@ -46,6 +58,8 @@ public class TyAuthServerConfig extends AuthorizationServerConfigurerAdapter {
 		endpoints.tokenStore(tokenStore)
 			// 注入WebSecurityConfig配置的bean
 			.authenticationManager(authenticationManager);
+        endpoints.userDetailsService(userDetailsServiceImpl);
+
 	}
 
 

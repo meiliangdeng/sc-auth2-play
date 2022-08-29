@@ -1,20 +1,17 @@
 package me.coast.auth.server.service.impl;
 
-import cn.hutool.core.collection.CollUtil;
-import me.coast.auth.server.constant.MessageConstant;
-import me.coast.auth.server.domain.entity.Client;
-import me.coast.auth.server.service.ClientService;
-import me.coast.auth.server.service.principal.ClientPrincipal;
-import org.springframework.http.HttpStatus;
-import org.springframework.security.crypto.password.PasswordEncoder;
-import org.springframework.security.oauth2.provider.ClientDetails;
-import org.springframework.security.oauth2.provider.ClientRegistrationException;
-import org.springframework.stereotype.Service;
-
-import javax.annotation.PostConstruct;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
+
+import org.springframework.security.crypto.password.PasswordEncoder;
+import org.springframework.security.oauth2.provider.ClientDetails;
+import org.springframework.security.oauth2.provider.ClientRegistrationException;
+
+import cn.hutool.core.collection.CollUtil;
+import me.coast.auth.server.domain.entity.Client;
+import me.coast.auth.server.service.ClientService;
+import me.coast.auth.server.service.principal.ClientPrincipal;
 
 public class ClientServiceImpl implements ClientService {
 
